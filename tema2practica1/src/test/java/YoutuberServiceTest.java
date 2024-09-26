@@ -45,7 +45,7 @@ class YoutuberServiceTest {
     @Test
     void testGetAverageVideosWithValidData() {
         double averageVideos = youtuberService.getAverageVideos();
-        assertEquals(429.2857142857143, averageVideos); // Cambiar este valor basado en los videos totales de youtubers añadidos
+        assertEquals(557.1428571428571, averageVideos); // Cambiar este valor basado en los videos totales de youtubers añadidos
     }
 
     @Test
