@@ -27,7 +27,7 @@ public class YoutuberTest {
 
     @Test
     void testEstimatedIncomeWithNegativeValues() {
-        Youtuber youtuber = new Youtuber("John", "2020-01-01", -100, 5000);
+        Youtuber youtuber = new Youtuber("Pepe", "2020-01-01", -100, 5000);
         double expectedIncome = ((-100.0 * 5000) / 2) * 0.002;
         assertEquals(expectedIncome, youtuber.estimatedIncome());
     }
