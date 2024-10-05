@@ -8,18 +8,18 @@ public class Main {
 
     public static void main(String[] args) {
         Path XML_FILE = Path.of("C:/Users/david/Documents/2 DAW/dwes-david/tema2.practica2/src/main/resources/protectoraDeAnimales.xml");
-        ProtectoraDeAnimales protectora = new ProtectoraDeAnimales();
+        AnimalShelter animalShelter = new AnimalShelter();
         int option;
         do {
             showMenu();
             option = Integer.parseInt(scanner.nextLine());
             switch (option) {
-                case 1 -> protectora.cargarDesdeXML(XML_FILE);
-                case 2 -> protectora.guardarEnXML(XML_FILE);
-                case 3 -> protectora.anyadirAnimal();
-                case 4 -> protectora.borrarAnimal();
-                case 5 -> protectora.consultarAnimal();
-                case 6 -> protectora.mostrarTodosLosAnimales();
+                case 1 -> animalShelter.loadXML(XML_FILE);
+                case 2 -> animalShelter.saveXML(XML_FILE);
+                case 3 -> animalShelter.addAnimal();
+                case 4 -> animalShelter.deleteAnimal();
+                case 5 -> animalShelter.searchAnimal();
+                case 6 -> animalShelter.showAllAnimals();
                 case 7 -> System.out.println("Saliendo...");
                 default -> System.out.println("Opción no válida.");
             }

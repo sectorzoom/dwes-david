@@ -1,13 +1,27 @@
 package org.example;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.NumberDeserializers;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+
+import java.util.Date;
+
 public class Animal {
+    @JacksonXmlProperty(localName = "id")
     private String id;
-    private String nombre;
-    private String especie;
-    private int edad;
-    private String sexo;
-    private String fechaIngreso;
-    private String adoptado;
+    @JacksonXmlProperty(localName = "nombre")
+    private String name;
+    @JacksonXmlProperty(localName = "especie")
+    private String specie;
+    @JacksonXmlProperty(localName = "edad")
+    private int age;
+    @JacksonXmlProperty(localName = "sexo")
+    private String genre;
+    @JacksonXmlProperty(localName = "fechaIngreso")
+    private Date dateOfEntry;
+    @JacksonXmlProperty(localName = "adoptado")
+    @JsonDeserialize(using = BooleanFromYesNoDeserializer.class)
+    private boolean adopted;
 
     public Animal() {}
 
@@ -19,51 +33,51 @@ public class Animal {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEspecie() {
-        return especie;
+    public String getSpecie() {
+        return specie;
     }
 
-    public void setEspecie(String especie) {
-        this.especie = especie;
+    public void setSpecie(String specie) {
+        this.specie = specie;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getAge() {
+        return age;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getFechaIngreso() {
-        return fechaIngreso;
+    public Date getDateOfEntry() {
+        return dateOfEntry;
     }
 
-    public void setFechaIngreso(String fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
+    public void setDateOfEntry(Date dateOfEntry) {
+        this.dateOfEntry = dateOfEntry;
     }
 
-    public String getAdoptado() {
-        return adoptado;
+    public boolean getAdopted() {
+        return adopted;
     }
 
-    public void setAdoptado(String adoptado) {
-        this.adoptado = adoptado;
+    public void setAdopted(boolean adopted) {
+        this.adopted = adopted;
     }
 }
